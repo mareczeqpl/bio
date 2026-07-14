@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MareczeQPL</title>
+<style>
+:root{--a:#7c3aed;--b:#06b6d4}
+*{box-sizing:border-box}body{margin:0;overflow:hidden;font-family:Arial,sans-serif;background:#050816;color:#fff}
+#stars,#cursor{position:fixed;inset:0;pointer-events:none}
+.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;animation:fall linear infinite}
+@keyframes fall{from{transform:translateY(-10vh)}to{transform:translateY(110vh)}}
+.card{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:360px;background:rgba(255,255,255,.08);backdrop-filter:blur(16px);padding:30px;border-radius:22px;text-align:center;border:1px solid rgba(255,255,255,.15)}
+.avatar{width:120px;height:120px;border-radius:50%;border:3px solid #fff;object-fit:cover;animation:pulse 2s infinite}
+@keyframes pulse{50%{transform:scale(1.05)}}
+a{display:block;margin:12px 0;padding:12px;border-radius:12px;text-decoration:none;color:#fff;background:linear-gradient(90deg,var(--a),var(--b))}
+button{margin-top:10px;padding:8px 14px}
+#dot{position:absolute;width:18px;height:18px;border:2px solid cyan;border-radius:50%;transform:translate(-50%,-50%)}
+</style></head><body>
+<!-- ===== EDYTUJ TYLKO TO ===== -->
+<script>
+const CONFIG={
+name:"MareczeQPL",
+avatar:"https://imgur.com/a/Bwl1GWV",
+bio:"🎮 Gamer<br>💻 Content Creator",
+music:"https://mp3.teledyski.info/download-szukaj-Gibbs%2C+Kukon.html", // wstaw link do mp3
+youtube:"https://www.youtube.com/@MareczeQPL",
+instagram:"https://www.instagram.com/_mareczeqpl/",
+tiktok:"https://www.tiktok.com/@mareczeqpl"
+};
+</script>
+<div id="stars"></div><div id="cursor"><div id="dot"></div></div>
+<div class="card">
+<img class="avatar" id="av"><h1 id="nm"></h1><p id="bio"></p>
+<a id="yt" target="_blank">▶ YouTube</a>
+<a id="ig" target="_blank">📸 Instagram</a>
+<a id="tt" target="_blank">🎵 TikTok</a>
+<button onclick="toggleMusic()">🎵 Play / Pause</button>
+</div>
+<audio id="audio" loop></audio>
+<script>
+nm.textContent=CONFIG.name;av.src=CONFIG.avatar;bio.innerHTML=CONFIG.bio;
+yt.href=CONFIG.youtube;ig.href=CONFIG.instagram;tt.href=CONFIG.tiktok;
+audio.src=CONFIG.music;
+function toggleMusic(){audio.paused?audio.play():audio.pause()}
+for(let i=0;i<180;i++){let s=document.createElement('div');s.className='star';s.style.left=Math.random()*100+'vw';s.style.top=Math.random()*100+'vh';s.style.opacity=Math.random();s.style.animationDuration=(4+Math.random()*8)+'s';s.style.animationDelay=(-Math.random()*10)+'s';stars.appendChild(s);}
+onmousemove=e=>{dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';}
+</script></body></html>
