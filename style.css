@@ -1,0 +1,65 @@
+/* styl.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Kontener centrujący formularz */
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* pełna wysokość ekranu */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+/* Formularz */
+#discordLoginForm {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Nagłówek formularza */
+#discordLoginForm h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Input */
+#discordLoginForm input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Przyciski */
+#discordLoginForm button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4d65ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#discordLoginForm button:hover {
+  background-color: #3a4dcc;
+}
